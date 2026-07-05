@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>VoiceAiSharp.Ut</AssemblyName>
+    <RootNamespace>VoiceAiSharp.Ut</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PhonemizerRoot Condition="'$(PhonemizerRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\..\Libraries\Avalon\Service\Phonemizer\</PhonemizerRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VoiceAiSharp\VoiceAiSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Avalon.Service.Phonemizer">
+      <HintPath>$(PhonemizerRoot)Avalon.Service.Phonemizer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+
+</Project>
