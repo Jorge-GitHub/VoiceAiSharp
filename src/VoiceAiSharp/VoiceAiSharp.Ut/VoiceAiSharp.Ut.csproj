@@ -7,7 +7,6 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PhonemizerRoot Condition="'$(PhonemizerRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\..\Libraries\Avalon\Service\Phonemizer\</PhonemizerRoot>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,12 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VoiceAiSharp\VoiceAiSharp.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Avalon.Service.Phonemizer">
-      <HintPath>$(PhonemizerRoot)Avalon.Service.Phonemizer.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

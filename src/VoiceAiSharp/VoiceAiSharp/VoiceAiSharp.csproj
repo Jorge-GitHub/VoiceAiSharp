@@ -17,7 +17,6 @@
     <TtsOnnxRuntimeProvider Condition="'$(TtsOnnxRuntimeProvider)' == ''">Cpu</TtsOnnxRuntimeProvider>
     <OnnxRuntimeVersion>1.27.0</OnnxRuntimeVersion>
     <OnnxRuntimeDirectMlVersion>1.24.4</OnnxRuntimeDirectMlVersion>
-    <PhonemizerRoot Condition="'$(PhonemizerRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\..\Libraries\Avalon\Service\Phonemizer\</PhonemizerRoot>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TtsOnnxRuntimeProvider)' == 'Cpu'">
@@ -37,16 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="$(PhonemizerRoot)Libraries\Native\Win-x64\**\*">
-      <Link>Application\Providers\EspeakNgNativeService\Libraries\Native\Win-x64\%(RecursiveDir)%(Filename)%(Extension)</Link>
-      <TargetPath>Application\Providers\EspeakNgNativeService\Libraries\Native\Win-x64\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Pack>true</Pack>
-      <PackagePath>runtimes\win-x64\native\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="PhonemizerSharp" Version="0.1.1" />
   </ItemGroup>
 
@@ -59,11 +48,6 @@
 
   <Target Name="ValidateTtsOnnxRuntimeProvider" BeforeTargets="ResolveReferences">
     <Error Condition="'$(TtsOnnxRuntimeProvider)' != 'Cpu' and '$(TtsOnnxRuntimeProvider)' != 'Cuda' and '$(TtsOnnxRuntimeProvider)' != 'DirectML'" Text="Unsupported TtsOnnxRuntimeProvider '$(TtsOnnxRuntimeProvider)'. Use Cpu, Cuda, or DirectML." />
-  </Target>
-
-  <Target Name="ValidatePhonemizerRoot" BeforeTargets="ResolveReferences">
-    <Error Condition="!Exists('$(PhonemizerRoot)Avalon.Base.Extension.dll')" Text="Avalon.Base.Extension.dll was not found. Set PhonemizerRoot to the folder containing the phonemizer assemblies." />
-    <Error Condition="!Exists('$(PhonemizerRoot)Avalon.Service.Phonemizer.dll')" Text="Avalon.Service.Phonemizer.dll was not found. Set PhonemizerRoot to the folder containing the phonemizer assemblies." />
   </Target>
 
 </Project>
