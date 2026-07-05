@@ -34,13 +34,6 @@
 
   <ItemGroup>
     <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
-
-    <Reference Include="Avalon.Base.Extension">
-      <HintPath>$(PhonemizerRoot)Avalon.Base.Extension.dll</HintPath>
-    </Reference>
-    <Reference Include="Avalon.Service.Phonemizer">
-      <HintPath>$(PhonemizerRoot)Avalon.Service.Phonemizer.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,6 +44,10 @@
       <Pack>true</Pack>
       <PackagePath>runtimes\win-x64\native\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PhonemizerSharp" Version="0.1.1" />
   </ItemGroup>
 
   <ItemGroup>

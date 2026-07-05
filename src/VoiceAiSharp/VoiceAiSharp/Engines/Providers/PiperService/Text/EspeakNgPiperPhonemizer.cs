@@ -1,10 +1,10 @@
+using PhonemizerSharp.Application;
+using PhonemizerSharp.Domain.Requests;
+using PhonemizerSharp.Domain.Results;
+using PhonemizerSharp.Domain.Settings;
+using PhonemizerSharp.Domain.Settings.Enums;
+using PhonemizerSharp.Domain.Settings.Providers;
 using VoiceAiSharp.Engines.Providers.PiperService.Models;
-using Avalon.Service.Phonemizer.Application;
-using Avalon.Service.Phonemizer.Domain.Requests;
-using Avalon.Service.Phonemizer.Domain.Results;
-using Avalon.Service.Phonemizer.Domain.Settings;
-using Avalon.Service.Phonemizer.Domain.Settings.Enums;
-using Avalon.Service.Phonemizer.Domain.Settings.Providers;
 
 namespace VoiceAiSharp.Engines.Providers.PiperService.Text;
 
