@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VoiceAiSharp.Ut/VoiceAiSharp.Ut.csproj" />
+  <Project Path="VoiceAiSharp/VoiceAiSharp.csproj" />
+</Solution>
